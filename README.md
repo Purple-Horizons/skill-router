@@ -1,4 +1,6 @@
-# OpenClaw Skill Router
+<p align="center">
+  <img src="assets/header.png" alt="Skill Router" width="100%">
+</p>
 
 > **⚠️ Prototype**: This is a proof-of-concept. Full functionality requires a small change to OpenClaw core to support dynamic skill loading. See [Integration Status](#integration-status) below.
 
