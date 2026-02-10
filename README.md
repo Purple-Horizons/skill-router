@@ -244,6 +244,41 @@ With 50 skills averaging 200 tokens each:
 
 Over a 100-message conversation, that's **940,000 tokens saved**.
 
+## Roadmap
+
+### Phase 1: Core ✅
+
+- [x] SKILL.md with routing instructions and agent protocol
+- [x] Index builder CLI (BM25 keyword extraction)
+- [x] Scoring engine with configurable thresholds
+- [x] Context injection via `.skill-router-context.md`
+- [x] `skill-router build`, `match`, and `status` commands
+- [x] Configurable always-include list
+- [x] Unit and integration tests
+
+### Phase 2: Polish 🚧
+
+- [ ] Auto-rebuild on skill file changes (file watcher)
+- [ ] Scoring weight tuning based on test corpus
+- [ ] ClawHub packaging for easy installation
+- [ ] `skill-router watch` command for development
+
+### Phase 3: Advanced 📋
+
+- [ ] Optional embedding support (OpenAI `text-embedding-3-small` or local models)
+- [ ] Hybrid BM25 + vector scoring with configurable weights
+- [ ] Skill usage analytics (track which skills match most/least)
+- [ ] Multi-agent routing (different skill sets per agent profile)
+- [ ] Community index sharing via ClawHub (pre-built indexes for skill packs)
+
+## Contributing
+
+Contributions welcome! Areas where help is needed:
+
+- **Test corpus**: Real-world message/skill pairs for tuning scoring weights
+- **Embedding integration**: Local model support via Ollama
+- **ClawHub packaging**: Distribution and install scripts
+
 ## License
 
 MIT
