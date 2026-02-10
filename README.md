@@ -1,5 +1,7 @@
 # OpenClaw Skill Router
 
+> **⚠️ Prototype**: This is a proof-of-concept. Full functionality requires a small change to OpenClaw core to support dynamic skill loading. See [Integration Status](#integration-status) below.
+
 Dynamic skill routing for OpenClaw - load only relevant skills per message using BM25 scoring.
 
 ## Why Skill Routing?
@@ -243,6 +245,41 @@ With 50 skills averaging 200 tokens each:
 | **Savings** | **94%** |
 
 Over a 100-message conversation, that's **940,000 tokens saved**.
+
+## Integration Status
+
+**Current State**: Prototype / Proof of Concept
+
+This skill-router implements the scoring engine, CLI, and context injection. However, **OpenClaw currently has no way to disable its built-in skill injection**. Without a core change, both systems run simultaneously (defeating the purpose).
+
+### What's Needed
+
+A small change to OpenClaw core (~20 lines) to add:
+
+```json
+{
+  "skills": {
+    "dynamic": true,
+    "router": "skill-router"
+  }
+}
+```
+
+When `dynamic: true`, OpenClaw would skip injecting all skills and defer to the router.
+
+### Current Workaround
+
+None that fully works. You could:
+- Set `allowBundled: []` to disable bundled skills (but workspace/managed skills still load)
+- Manually disable each skill via `entries.<name>.enabled: false` (tedious)
+
+### Path Forward
+
+1. Open a GitHub Discussion on clawdbot/clawdbot proposing dynamic skill loading
+2. Submit a minimal PR if the maintainers are receptive
+3. Until then, this remains a proof-of-concept
+
+See `docs/OPENCLAW_INTEGRATION_RESEARCH.md` for technical details.
 
 ## Roadmap
 
