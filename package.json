@@ -1,0 +1,46 @@
+{
+  "name": "skill-router",
+  "version": "0.1.0",
+  "description": "Dynamic skill routing for OpenClaw - load only relevant skills per message using BM25 scoring",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "skill-router": "./bins/skill-router"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "openclaw",
+    "skill-router",
+    "ai",
+    "context-optimization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "glob": "^10.0.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "bins",
+    "SKILL.md",
+    "skill.json"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "skill-router",
+  "version": "0.1.0",
+  "description": "Dynamic skill routing for OpenClaw - load only relevant skills per message using BM25 scoring",
+  "env": {
+    "SKILL_ROUTER_MAX_RESULTS": "3",
+    "SKILL_ROUTER_THRESHOLD": "0.3"
+  },
+  "bin": {
+    "skill-router": "./bins/skill-router"
+  },
+  "dependencies": {
+    "node": ">=18.0.0"
+  }
+}
