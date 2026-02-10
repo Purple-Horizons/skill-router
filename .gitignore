@@ -25,3 +25,6 @@ npm-debug.log*
 
 # Private docs
 docs/PR_STRATEGY.md
+
+# Claude session notes
+.claude/
